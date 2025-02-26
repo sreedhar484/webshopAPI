@@ -75,21 +75,6 @@ class PlaceOrderView(APIView):
         return Response(OrderSerializer(order).data, status=status.HTTP_201_CREATED)
     def send_order_email(self, order):
         subject = "Order Confirmation - Your Order Has Been Placed"
-        message = f"""
-        Hello {order.customer_name},
-
-        Thank you for your order! Your order ID is {order.id}.
-        Your order is currently being processed.
-
-        Order Summary:
-        {''.join([f"{item.quantity}x {item.product.name} - ${item.product.price}\n" for item in order.items.all()])}
-
-        Total Price: ${sum(item.product.price * item.quantity for item in order.items.all())}
-
-        We will notify you once your order is shipped.
-
-        Best regards,
-        Your Webshop Team
-        """
+        message = "Thank you for your order! Your order"
         recipient_email = order.customer_email
         send_mail(subject, message, settings.EMAIL_HOST_USER, [recipient_email])

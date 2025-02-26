@@ -76,24 +76,24 @@ WSGI_APPLICATION = 'webshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-# env = environ.Env()
-# environ.Env.read_env()
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydb',  # Replace with your actual database name
-        'USER': 'myuser',  # Replace with your actual DB user
-        'PASSWORD': 'mypassword',  # Replace with your actual DB password
-        'HOST': '/cloudsql/emerald-rhythm-452112-u4:us-central1:my-database',  # Cloud SQL instance connection name
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# env = environ.Env()
+# environ.Env.read_env()
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'mydb',  # Replace with your actual database name
+#         'USER': 'myuser',  # Replace with your actual DB user
+#         'PASSWORD': 'mypassword',  # Replace with your actual DB password
+#         'HOST': '/cloudsql/emerald-rhythm-452112-u4:us-central1:my-database',  # Cloud SQL instance connection name
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
